@@ -1,18 +1,17 @@
-"""
-WSGI config for todo_django project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
-"""
-
 import os
+import sys
+import site
 
-from django.core.wsgi import get_wsgi_application
+# Add the project directory to the sys.path
+sys.path.insert(0, '/home/praphulchandraganapathri/todo_django')
 
+# Add the virtual environment site-packages to the sys.path
+site.addsitedir('/home/praphulchandraganapathri/todo_django/virtualenv/lib/python3.10/site-packages')
+
+# Set the settings module
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'todo_django.settings')
 
+# Import and setup the WSGI application
+from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-#for deploying since vercel doesnt recognise application but does app
-app = application
+

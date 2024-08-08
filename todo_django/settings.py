@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
-
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #i commented this for vercel deployment
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +28,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','praphulchandraganapathri.pythonanywhere.com']
 
 # Application definition
 
@@ -60,7 +57,7 @@ ROOT_URLCONF = 'todo_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/praphulchandraganapathri/todo_django/app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,7 +91,7 @@ DATABASES = {
 #         'USER': 'postgres',
 #         'PASSWORD': 'WiLfxFyHDUzDPJgvvHatIIzjaMsdGgfm',
 #         'HOST': 'postgres.railway.internal',
-#         # 'HOST': '127.0.0.1', 
+#         # 'HOST': '127.0.0.1',
 #         'PORT': '5432',
 #     }
 # }
